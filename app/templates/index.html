@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+  <head>
+	<title>Media Sharing Lab</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+	
+	{% include "menubar.html" %}
+	
+	{% if entries|length == 0 %}
+	<!-- There are no entries -- Suggest upload -->
+	<h1>No entries</h1>
+	<p>Upload new entries using <a href="{{ url_for('route_add') }}">this form</a>.</p>
+	{% else %}
+
+	<!-- There are some entries -- list them -->
+	<ul class="entries">
+	  {% for entry in entries %}
+	  <li>
+		<a href="{{ url_for('route_view', e_unid=entry.eid) }}">
+		  {% if not entry.thumbnail %}
+			<img src="{{ url_for('static', filename='in_progress-T.png') }}">
+		  {% else %}
+			<img src="http://s3.amazonaws.com/{{bucket}}/{{entry.thumbnail}}">
+		  {% endif %}
+		  <h2> {{ entry.title }} </h2>
+		</a>
+		<p> {{ entry.comment }}	</p>
+	  </li>
+	  {% endfor %}
+	</ul>
+	{% endif %}
+	
+  </body>
+</html>

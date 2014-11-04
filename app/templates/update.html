@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+  <head>
+	<title>Media Sharing Lab</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body class="update">
+	
+	{% include "menubar.html" %}
+	
+	<form type="multipart" method="post" action="{{ url_for('route_update') }}" enctype="multipart/form-data">
+	  
+	</form>
+	
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<ul class="menubar">
+  <!-- @TODO: Better user experience if we embed the upload form here if there's no entries -->
+  <li id="home">
+	<a href="{{ url_for('route_home') }}"> Home </a>
+  </li>
+  <li id="add">
+	<a href="{{ url_for('route_add') }}"> Add entry </a>
+  </li>
+  
+  {% if entry %}
+  <li id="delete">
+	<!-- <a href="/delete/{{entry.eid}}"> delete </a> -->
+	<a href="{{ url_for('route_delete', e_unid=entry.eid) }}"> Delete </a>
+  </li>
+  {% endif %}
+</ul>

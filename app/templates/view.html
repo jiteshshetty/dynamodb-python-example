@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+  <head>
+	<title>Media Sharing Lab</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+	{% if entry.type == 'video' %}
+	<script type="text/javascript" src="{{ url_for('static', filename='jwplayer.js') }}" ></script>
+	{% endif %}
+  </head>
+  <body class="view">
+	
+	{% include "menubar.html" %}
+	
+	{% if not entry %}
+	<h1> There is no entry! </h1>
+	{% else %}
+
+	<h1 class="{{entry.type}}">{{entry.title}}</h1>
+	{% if entry.type == 'image' %}
+	<img src="http://s3.amazonaws.com/{{bucket}}/{{entry.resource}}">
+	{% else %}
+		{% if not entry.thumbnail %}
+		<img src="{{ url_for('static', filename='in_progress-T.png') }}">
+		{% else %}
+		<div id="vplayer">
+		  loading video ...
+		</div>
+		<script type="text/javascript">
+		  jwplayer("vplayer").setup({
+			file: "rtmp://{{distrib}}/cfx/st/{{entry.resource}}"
+		  });
+		</script>
+		{% endif %}
+   	{% endif %}
+	<p>
+	  <span>Published: {{entry.timestamp}}</span>
+	  {{entry.comment}}
+	</p>
+	{% endif %}
+	
+  </body>
+</html>

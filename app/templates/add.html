@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+  <head>
+	<title>Media Sharing Lab</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body class="add">
+	
+	{% include "menubar.html" %}
+	
+	<form type="multipart" method="post" action="{{ url_for('route_add') }}" enctype="multipart/form-data">
+	  <h1>Upload a new entry</h1>
+	  <label> Title </label>
+	  <input type="text" name="title">
+	  <label> Comment </label>
+	  <textarea name="comment"></textarea>
+	  <label> File </label>
+	  <input type="file" name="file">
+	  <input type="submit" value="upload">
+	</form>
+	
+  </body>
+</html>

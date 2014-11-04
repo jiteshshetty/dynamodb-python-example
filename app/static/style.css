@@ -1,0 +1,129 @@
+body {
+	background: #efefef;
+	padding-top: 0px;
+	margin: 0px 20px 20px 20px;
+	
+}
+
+ul.menubar {
+	background: none repeat scroll 0 0 #101010;
+    margin: 0px;
+    padding: 10px;
+	border-radius: 0px 0px 4px 4px;
+	box-shadow: 0 2px 8px #AAA;
+}
+
+ul.menubar li {
+	display: inline;
+    list-style: none outside none;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+}
+
+ul.menubar li#add, ul.menubar li#delete {
+    border-left: 2px solid #777777;
+    margin-left: 10px;
+    padding-left: 40px;
+}
+
+ul.menubar li#home {
+	background-image: url("/static/home.png");
+    background-position: 0px -2px;
+	background-size: 24px 24px;
+}
+
+ul.menubar li#add {
+	background-image: url("/static/add.png");
+    background-position: 10px 0px;
+	background-size: 24px 20px;
+}
+
+ul.menubar li#delete {
+	background-image: url("/static/del.png");
+    background-position: 10px 0px;
+	background-size: 24px 20px;
+}
+
+ul.menubar li a {
+	color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul.entries {
+	padding: 0px
+}
+
+ul.entries li {
+	background: white;
+	padding: 10px;
+	border-radius: 4px;
+	list-style: none;
+	float: left;
+	box-shadow: 0 2px 8px #AAA;
+	margin: 20px;
+}
+
+ul.entries li, ul.entries li img {
+	border: solid 1px #999;
+}
+
+ul.entries li a {
+	text-decoration: none;
+}
+
+ul.entries li h2 {
+	margin: 8px 0 4px 0;
+	color: #333;
+}
+
+ul.entries li p {
+	margin: 0px;
+	color: #999;
+}
+
+
+ul.entries li h2, ul.entries li p {
+	width: 320px;
+}
+
+.view h1.image {
+	background-image: url("/static/picture.png");
+    background-position: 4px 4px;
+	background-size: 32px 32px;
+    background-repeat: no-repeat;
+    padding-left: 48px;
+}
+
+.view h1.video {
+	background-image: url("/static/movie.png");
+    background-position: 4px 4px;
+	background-size: 32px 32px;
+    background-repeat: no-repeat;
+    padding-left: 48px;
+}
+
+.view p span {
+	color: #999999;
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 2em;
+/*	background-image: url("/static/calendar.png");
+    background-position: 0px 0px;
+	background-size: 16px 16px;
+    background-repeat: no-repeat;
+    padding: 2px 0px 2px 20px; */
+}
+
+.add label {
+	display: block;
+	margin: 18px 0px 6px 0px;
+}
+
+.add input[type=text], .add textarea {
+	border: solid 2px grey;
+	padding: 4px;
+	width: 400px;
+}
